@@ -18,4 +18,36 @@ class ReadingsViewController: UITableViewController {
         return viewController
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setupUI()
+        self.bindViewModel()
+        
+    }
+    
+    func setupUI(){
+        self.title = NSLocalizedString("Readings", comment: "Readings.Title")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: nil, action: nil)
+    }
+    
+    func bindViewModel() {
+
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    // Mark: UITableview delegates
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (viewModel?.readings.value.count)!
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReadingsCell")
+        return cell!
+    }
+    
 }
