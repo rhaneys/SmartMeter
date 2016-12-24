@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="28" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1qz-kE-hJm" id="Iut-82-6Gq">
-                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -36,6 +37,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bnk-RX-R2L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-73" y="95"/>
+        </scene>
+        <!--Reading View Controller-->
+        <scene sceneID="7PQ-XU-z2a">
+            <objects>
+                <viewController storyboardIdentifier="ReadingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1nI-2n-QTv" customClass="ReadingViewController" customModule="SmartMeter" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yTT-Sw-8cY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nl1-Sx-tFG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="G0l-9Q-Pxx">
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xau-F4-jmN">
+                                <rect key="frame" x="70" y="120" width="884" height="1146"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xau-F4-jmN" firstAttribute="leading" secondItem="G0l-9Q-Pxx" secondAttribute="leadingMargin" constant="50" id="0Ik-G0-8AV"/>
+                            <constraint firstItem="xau-F4-jmN" firstAttribute="top" secondItem="yTT-Sw-8cY" secondAttribute="bottom" constant="100" id="3g4-gg-HUq"/>
+                            <constraint firstItem="nl1-Sx-tFG" firstAttribute="top" secondItem="xau-F4-jmN" secondAttribute="bottom" constant="100" id="QbN-MA-KEX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xau-F4-jmN" secondAttribute="trailing" constant="50" id="SpX-0F-4J6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ece-L7-l5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="600.5859375" y="89.604685212298676"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="22S-Dm-Ybx">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="KJt-hC-hmC" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Az-VB-3OK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="717" y="301"/>
         </scene>
     </scenes>
 </document>

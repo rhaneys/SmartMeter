@@ -8,25 +8,16 @@
 
 import UIKit
 
-class AppSplitViewController: UISplitViewController {
+class AppSplitViewController: UISplitViewController, UISplitViewControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredDisplayMode = .AllVisible
+        self.delegate = self
         
     }
     
-    override func showDetailViewController(vc: UIViewController, sender: AnyObject?) {
-        
-        
-    }
-    
-    func primaryViewControllerForCollapsingSplitViewController(splitViewController: UISplitViewController) -> UIViewController? {
-        return self.viewControllers.first
-    }
-    
-
-    func primaryViewControllerForExpandingSplitViewController(splitViewController: UISplitViewController) -> UIViewController? {
-        return self.viewControllers.first
-    }
+    /*
+     http://stackoverflow.com/questions/26060915/having-a-uinavigationcontroller-in-the-master-view-of-a-uisplitviewcontroller-in
+    */
 }

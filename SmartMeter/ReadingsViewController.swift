@@ -26,14 +26,29 @@ class ReadingsViewController: UITableViewController {
     }
     
     func setupUI(){
+        
         self.title = NSLocalizedString("Readings", comment: "Readings.Title")
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: nil, action: nil)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: #selector(self.onAddButtonPressed(_:)))
     }
     
     func bindViewModel() {
 
     }
     
+    func onAddButtonPressed(sender: UIBarButtonItem) {
+
+        let viewController = ReadingViewController.viewController(viewModel!)
+        guard let splitView = self.splitViewController else {
+            return
+        }
+        if splitView.collapsed {
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }
+        else {
+            self.showDetailViewController(viewController, sender: self)
+        }
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

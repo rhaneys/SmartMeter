@@ -14,7 +14,6 @@ import RealmSwift
 class ReadingsModel: NSObject {
     
     var notificationToken: NotificationToken? = nil
-
     let selectedReading = MutableProperty("")
     let readings = MutableProperty([MeterReading]())
     

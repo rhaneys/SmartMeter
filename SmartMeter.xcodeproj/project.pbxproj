@@ -13,12 +13,9 @@
 		500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */; };
 		5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */; };
 		50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2561C1D044400D52115 /* AppDelegate.swift */; };
-		50CCC2591C1D044400D52115 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2581C1D044400D52115 /* FirstViewController.swift */; };
-		50CCC25B1C1D044400D52115 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC25A1C1D044400D52115 /* SecondViewController.swift */; };
 		50CCC25E1C1D044400D52115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25C1C1D044400D52115 /* Main.storyboard */; };
 		50CCC2601C1D044400D52115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25F1C1D044400D52115 /* Assets.xcassets */; };
 		50CCC2631C1D044400D52115 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC2611C1D044400D52115 /* LaunchScreen.storyboard */; };
-		50CCC26E1C1D044400D52115 /* SmartMeterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC26D1C1D044400D52115 /* SmartMeterTests.swift */; };
 		50CCC2791C1D044400D52115 /* SmartMeterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2781C1D044400D52115 /* SmartMeterUITests.swift */; };
 		50CCC2891C1D088900D52115 /* AppTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2881C1D088900D52115 /* AppTabViewController.swift */; };
 		50FE74AB1E0628150020CA65 /* Meters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50FE74AA1E0628150020CA65 /* Meters.storyboard */; };
@@ -56,14 +53,11 @@
 		5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
 		50CCC2531C1D044400D52115 /* SmartMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCC2561C1D044400D52115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		50CCC2581C1D044400D52115 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		50CCC25A1C1D044400D52115 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		50CCC25D1C1D044400D52115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		50CCC25F1C1D044400D52115 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CCC2621C1D044400D52115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		50CCC2641C1D044400D52115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCC2691C1D044400D52115 /* SmartMeterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartMeterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		50CCC26D1C1D044400D52115 /* SmartMeterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMeterTests.swift; sourceTree = "<group>"; };
 		50CCC26F1C1D044400D52115 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50CCC2741C1D044400D52115 /* SmartMeterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartMeterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCC2781C1D044400D52115 /* SmartMeterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartMeterUITests.swift; sourceTree = "<group>"; };
@@ -190,7 +184,6 @@
 		50CCC26C1C1D044400D52115 /* SmartMeterTests */ = {
 			isa = PBXGroup;
 			children = (
-				50CCC26D1C1D044400D52115 /* SmartMeterTests.swift */,
 				50CCC26F1C1D044400D52115 /* Info.plist */,
 			);
 			path = SmartMeterTests;
@@ -222,8 +215,6 @@
 				5022891A1E0BAFB30012FBA2 /* Main */,
 				50FE74AE1E0765430020CA65 /* Readings */,
 				50499F2D1E0617A500DE5623 /* Meters */,
-				50CCC2581C1D044400D52115 /* FirstViewController.swift */,
-				50CCC25A1C1D044400D52115 /* SecondViewController.swift */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -555,12 +546,10 @@
 				50CCC2891C1D088900D52115 /* AppTabViewController.swift in Sources */,
 				500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */,
 				50FEEF9F1E076B6900CC65BD /* ReadingsModel.swift in Sources */,
-				50CCC25B1C1D044400D52115 /* SecondViewController.swift in Sources */,
 				50FE74B01E07655F0020CA65 /* ReadingViewController.swift in Sources */,
 				50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */,
 				500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */,
 				5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */,
-				50CCC2591C1D044400D52115 /* FirstViewController.swift in Sources */,
 				50FE74AD1E07652E0020CA65 /* ReadingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,7 +558,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50CCC26E1C1D044400D52115 /* SmartMeterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,7 +764,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kinegetics.SmartMeterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = SmartMeter;
 				USES_XCTRUNNER = YES;
 			};
@@ -790,7 +778,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kinegetics.SmartMeterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = SmartMeter;
 				USES_XCTRUNNER = YES;
 			};
