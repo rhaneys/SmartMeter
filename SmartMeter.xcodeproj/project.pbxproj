@@ -12,6 +12,8 @@
 		500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB61E03807700EFFADA /* MeterReadingRealm.swift */; };
 		500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */; };
 		5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */; };
+		5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6051E10B05C00016531 /* MeterListCell.swift */; };
+		5089F6081E10B15500016531 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6071E10B15500016531 /* ImageListCell.swift */; };
 		50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2561C1D044400D52115 /* AppDelegate.swift */; };
 		50CCC25E1C1D044400D52115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25C1C1D044400D52115 /* Main.storyboard */; };
 		50CCC2601C1D044400D52115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25F1C1D044400D52115 /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 		500E9FB61E03807700EFFADA /* MeterReadingRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterReadingRealm.swift; sourceTree = "<group>"; };
 		500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSmartMeter.swift; sourceTree = "<group>"; };
 		5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
+		5089F6051E10B05C00016531 /* MeterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterListCell.swift; sourceTree = "<group>"; };
+		5089F6071E10B15500016531 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		50CCC2531C1D044400D52115 /* SmartMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCC2561C1D044400D52115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50CCC25D1C1D044400D52115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -233,6 +237,8 @@
 				50FE74AC1E07652E0020CA65 /* ReadingsViewController.swift */,
 				50FE74AF1E07655F0020CA65 /* ReadingViewController.swift */,
 				50FEEF9E1E076B6900CC65BD /* ReadingsModel.swift */,
+				5089F6051E10B05C00016531 /* MeterListCell.swift */,
+				5089F6071E10B15500016531 /* ImageListCell.swift */,
 			);
 			name = Readings;
 			sourceTree = "<group>";
@@ -544,6 +550,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CCC2891C1D088900D52115 /* AppTabViewController.swift in Sources */,
+				5089F6081E10B15500016531 /* ImageListCell.swift in Sources */,
+				5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */,
 				500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */,
 				50FEEF9F1E076B6900CC65BD /* ReadingsModel.swift in Sources */,
 				50FE74B01E07655F0020CA65 /* ReadingViewController.swift in Sources */,

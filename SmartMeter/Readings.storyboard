@@ -67,13 +67,5 @@
             </objects>
             <point key="canvasLocation" x="600.5859375" y="89.604685212298676"/>
         </scene>
-        <!--Page View Controller-->
-        <scene sceneID="22S-Dm-Ybx">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="KJt-hC-hmC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Az-VB-3OK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="717" y="301"/>
-        </scene>
     </scenes>
 </document>
