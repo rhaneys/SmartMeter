@@ -59,4 +59,8 @@ class ReadingsModel: NSObject {
         selectedImageSource.value = imageSource
     }
     
+    func processImage(image:UIImage) {
+        
+    }
+    
 }

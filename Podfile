@@ -11,18 +11,7 @@ pod 'Realm', '~> 2.0.2'
 pod 'RealmSwift', '~> 2.0.2'
 pod 'XCGLogger', '~> 3.1.1'
 pod 'OpenCV'
+pod 'TesseractOCRiOS'
 
 end
 
-def testing_pods
-    pod 'Quick'
-    pod 'Nimble'
-end
-
-target 'SmartMeterTests' do
-    testing_pods
-end
-
-target 'SmartMeterUITests' do
-    testing_pods
-end

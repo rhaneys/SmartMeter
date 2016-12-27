@@ -67,11 +67,15 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         alertController.setValue(tableViewController, forKey: "contentViewController")
         
-        self.presentViewController(alertController, animated: true)
-        {
-            // ...
+        //...
+        var rootViewController = UIApplication.sharedApplication().keyWindow?.rootViewController
+        if let navigationController = rootViewController as? UINavigationController {
+            rootViewController = navigationController.viewControllers.first
         }
-        
+        if let tabBarController = rootViewController as? UITabBarController {
+            rootViewController = tabBarController.selectedViewController
+        }
+        rootViewController?.presentViewController(alertController, animated: true, completion: nil)
     }
     
     // Mark TableView delegates
