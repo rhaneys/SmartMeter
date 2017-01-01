@@ -9,9 +9,12 @@
 import Foundation
 import UIKit
 
-class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let picker = UIImagePickerController.init()
     var viewModel:ReadingsModel?
+    @IBOutlet weak var readingImageView: UIImageView!
+
     
     static func viewController(viewModel: ReadingsModel) -> ReadingViewController {
         let viewController = UIStoryboard(name: "Readings", bundle: nil).instantiateViewControllerWithIdentifier("ReadingViewController") as! ReadingViewController
@@ -21,9 +24,9 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.picker.delegate = self
+        self.picker.allowsEditing = false
         self.setupUI()
-        
-        
     }
     
     func setupUI() {
@@ -40,6 +43,10 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
         let okAction = UIAlertAction(title: "OK", style: .Default)
         { (action) in
             // ...
+            self.picker.sourceType = .PhotoLibrary
+
+            self.presentViewController(self.picker, animated: true, completion: nil)
+            
         }
         
         alertController.addAction(okAction)
@@ -160,5 +167,22 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
+//        optional public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            readingImageView.image = image
+        }
+        else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            readingImageView.image = image
+        } else{
+            print("Something went wrong")
+        }
+        
+        picker.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+
 }
 

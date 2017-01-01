@@ -10,6 +10,8 @@
 		500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB61E03807700EFFADA /* MeterReadingRealm.swift */; };
 		500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */; };
 		5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */; };
+		5046359A1E1636F100B60F82 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504635991E1636F100B60F82 /* UIImage+Rotate.m */; };
+		5046359D1E16374300B60F82 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */; };
 		5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6051E10B05C00016531 /* MeterListCell.swift */; };
 		5089F6081E10B15500016531 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6071E10B15500016531 /* ImageListCell.swift */; };
 		50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2561C1D044400D52115 /* AppDelegate.swift */; };
@@ -48,6 +50,12 @@
 		500E9FB61E03807700EFFADA /* MeterReadingRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterReadingRealm.swift; sourceTree = "<group>"; };
 		500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSmartMeter.swift; sourceTree = "<group>"; };
 		5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
+		504635971E1636F000B60F82 /* SmartMeter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartMeter-Bridging-Header.h"; sourceTree = "<group>"; };
+		504635981E1636F100B60F82 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		504635991E1636F100B60F82 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		5046359B1E16374300B60F82 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
+		5046359E1E174F1300B60F82 /* EmeoCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmeoCV.h; sourceTree = "<group>"; };
 		5089F6051E10B05C00016531 /* MeterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterListCell.swift; sourceTree = "<group>"; };
 		5089F6071E10B15500016531 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		50CCC2531C1D044400D52115 /* SmartMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +142,18 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
+		504635961E1634A000B60F82 /* EmeoCV */ = {
+			isa = PBXGroup;
+			children = (
+				5046359E1E174F1300B60F82 /* EmeoCV.h */,
+				5046359B1E16374300B60F82 /* UIImage+OpenCV.h */,
+				5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */,
+				504635981E1636F100B60F82 /* UIImage+Rotate.h */,
+				504635991E1636F100B60F82 /* UIImage+Rotate.m */,
+			);
+			name = EmeoCV;
+			sourceTree = "<group>";
+		};
 		50499F2D1E0617A500DE5623 /* Meters */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,11 +186,13 @@
 		50CCC2551C1D044400D52115 /* SmartMeter */ = {
 			isa = PBXGroup;
 			children = (
+				504635961E1634A000B60F82 /* EmeoCV */,
 				500E9FB81E03882700EFFADA /* Services */,
 				500E9FB51E037ED400EFFADA /* Data Model */,
 				50CCC2871C1D075E00D52115 /* View Controller */,
 				50CCC2861C1D074F00D52115 /* Stroryboard */,
 				50CCC2561C1D044400D52115 /* AppDelegate.swift */,
+				504635971E1636F000B60F82 /* SmartMeter-Bridging-Header.h */,
 				50CCC25F1C1D044400D52115 /* Assets.xcassets */,
 				50CCC2641C1D044400D52115 /* Info.plist */,
 			);
@@ -445,11 +467,13 @@
 				5089F6081E10B15500016531 /* ImageListCell.swift in Sources */,
 				5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */,
 				500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */,
+				5046359D1E16374300B60F82 /* UIImage+OpenCV.mm in Sources */,
 				50FEEF9F1E076B6900CC65BD /* ReadingsModel.swift in Sources */,
 				50FE74B01E07655F0020CA65 /* ReadingViewController.swift in Sources */,
 				50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */,
 				500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */,
 				5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */,
+				5046359A1E1636F100B60F82 /* UIImage+Rotate.m in Sources */,
 				50FE74AD1E07652E0020CA65 /* ReadingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,6 +626,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FU93H4LYCF;
 				ENABLE_BITCODE = NO;
@@ -610,6 +635,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kinegetics.SmartMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartMeter/SmartMeter-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
@@ -620,6 +647,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = FU93H4LYCF;
 				ENABLE_BITCODE = NO;
@@ -628,6 +656,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.kinegetics.SmartMeter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmartMeter/SmartMeter-Bridging-Header.h";
 				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
