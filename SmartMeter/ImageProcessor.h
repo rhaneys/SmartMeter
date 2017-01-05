@@ -1,55 +1,65 @@
-/*
- * ImageProcessor.h
- *
- */
+//
+//  ImageProcessor.h
+//  InfojobOCR
+//
+//  Created by Paolo Tagliani on 06/06/12.
+//  Copyright (c) 2012 26775. All rights reserved.
+//
 
-#ifndef IMAGEPROCESSOR_H_
-#define IMAGEPROCESSOR_H_
-
-#include <vector>
-
-#include <opencv2/imgproc/imgproc.hpp>
-
-#include "ImageInput.h"
-#include "Config.h"
+#ifndef InfojobOCR_ImageProcessor_h
+#define InfojobOCR_ImageProcessor_h
+#import <opencv2/opencv.hpp>
 
 class ImageProcessor {
+    
+    typedef struct{
+        int contador;
+        double media;
+    }cuadrante;
+
+    
 public:
-    ImageProcessor(const Config & config);
+    /*
+     To test the implementation I perform a canny on a black white image
+     */
+    cv::Mat processImage(cv::Mat source, float height);
+    
+    /*
+     Filter the image with a median filter to redue the salt&pepper noise,
+     then apply the smooth operator to reduce noise.
+     */
+    cv::Mat filterMedianSmoot(const cv::Mat &source);
+    
+    /*
+     Filter with a gaussian
+     */
+    
+    cv::Mat filterGaussian(const cv::Mat&source);
+    
+    /*
+     Histogram equalization on 1 channel image
+     */
+    cv::Mat equalize(const cv::Mat&source);
+    
+    /*
+     Binarization made using a mobile median treshold,
+     adapted using the image dimension
+     */
+    cv::Mat binarize(const cv::Mat&source);
+    
+    
+    /*
+     Detect if an image is rotated and correct to the proper orientation
+     of the text
+     */
+    int correctRotation (cv::Mat &image, cv::Mat &output, float height);
+    
+    /*
+     Implements the rotation of the image according to the angle passed
+     as parameter
+     */
+    cv::Mat rotateImage(const cv::Mat& source, double angle);
 
-    void setOrientation(int rotationDegrees);
-    void setInput(cv::Mat & img);
-    void process();
-    const std::vector<cv::Mat> & getOutput();
-
-    void debugWindow(bool bval = true);
-    void debugSkew(bool bval = true);
-    void debugEdges(bool bval = true);
-    void debugDigits(bool bval = true);
-    void showImage();
-    void saveConfig();
-    void loadConfig();
-
-private:
-    void rotate(double rotationDegrees);
-    void findCounterDigits();
-    void findAlignedBoxes(std::vector<cv::Rect>::const_iterator begin,
-            std::vector<cv::Rect>::const_iterator end, std::vector<cv::Rect>& result);
-    float detectSkew();
-    void drawLines(std::vector<cv::Vec2f>& lines);
-    void drawLines(std::vector<cv::Vec4i>& lines, int xoff=0, int yoff=0);
-    cv::Mat cannyEdges();
-    void filterContours(std::vector<std::vector<cv::Point> >& contours, std::vector<cv::Rect>& boundingBoxes,
-            std::vector<std::vector<cv::Point> >& filteredContours);
-
-    cv::Mat _img;
-    cv::Mat _imgGray;
-    std::vector<cv::Mat> _digits;
-    Config _config;
-    bool _debugWindow;
-    bool _debugSkew;
-    bool _debugEdges;
-    bool _debugDigits;
 };
 
-#endif /* IMAGEPROCESSOR_H_ */
+#endif

@@ -10,8 +10,19 @@
 		500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB61E03807700EFFADA /* MeterReadingRealm.swift */; };
 		500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */; };
 		5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */; };
-		5046359A1E1636F100B60F82 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = 504635991E1636F100B60F82 /* UIImage+Rotate.m */; };
 		5046359D1E16374300B60F82 /* UIImage+OpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */; };
+		50788FF51E1E2824009B4498 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FF41E1E2824009B4498 /* Accelerate.framework */; };
+		50788FF71E1E2834009B4498 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FF61E1E2834009B4498 /* AssetsLibrary.framework */; };
+		50788FF91E1E2841009B4498 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FF81E1E2841009B4498 /* AVFoundation.framework */; };
+		50788FFB1E1E284F009B4498 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FFA1E1E284F009B4498 /* CoreGraphics.framework */; };
+		50788FFD1E1E285E009B4498 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FFC1E1E285E009B4498 /* CoreImage.framework */; };
+		50788FFF1E1E286C009B4498 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50788FFE1E1E286C009B4498 /* CoreMedia.framework */; };
+		507890011E1E2878009B4498 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507890001E1E2878009B4498 /* CoreVideo.framework */; };
+		507890031E1E288E009B4498 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507890021E1E288E009B4498 /* QuartzCore.framework */; };
+		507890051E1E289F009B4498 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507890041E1E289F009B4498 /* UIKit.framework */; };
+		507890071E1E28B4009B4498 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 507890061E1E28B4009B4498 /* Foundation.framework */; };
+		507890091E1E2EBA009B4498 /* SmartMeterOpenCV.mm in Sources */ = {isa = PBXBuildFile; fileRef = 507890081E1E2EBA009B4498 /* SmartMeterOpenCV.mm */; };
+		5078900D1E1E3183009B4498 /* ImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5078900B1E1E3183009B4498 /* ImageProcessor.cpp */; };
 		5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6051E10B05C00016531 /* MeterListCell.swift */; };
 		5089F6081E10B15500016531 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6071E10B15500016531 /* ImageListCell.swift */; };
 		50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2561C1D044400D52115 /* AppDelegate.swift */; };
@@ -51,11 +62,22 @@
 		500E9FB91E0389F300EFFADA /* RealmSmartMeter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmSmartMeter.swift; sourceTree = "<group>"; };
 		5022891B1E0BB1740012FBA2 /* AppSplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSplitViewController.swift; sourceTree = "<group>"; };
 		504635971E1636F000B60F82 /* SmartMeter-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmartMeter-Bridging-Header.h"; sourceTree = "<group>"; };
-		504635981E1636F100B60F82 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
-		504635991E1636F100B60F82 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
-		5046359B1E16374300B60F82 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
+		5046359B1E16374300B60F82 /* UIImage+OpenCV.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = "UIImage+OpenCV.h"; sourceTree = "<group>"; };
 		5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = "UIImage+OpenCV.mm"; sourceTree = "<group>"; };
-		5046359E1E174F1300B60F82 /* EmeoCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EmeoCV.h; sourceTree = "<group>"; };
+		50788FF41E1E2824009B4498 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		50788FF61E1E2834009B4498 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		50788FF81E1E2841009B4498 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		50788FFA1E1E284F009B4498 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		50788FFC1E1E285E009B4498 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		50788FFE1E1E286C009B4498 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		507890001E1E2878009B4498 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		507890021E1E288E009B4498 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		507890041E1E289F009B4498 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		507890061E1E28B4009B4498 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		507890081E1E2EBA009B4498 /* SmartMeterOpenCV.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SmartMeterOpenCV.mm; sourceTree = "<group>"; };
+		5078900A1E1E2EE5009B4498 /* SmartMeterOpenCV.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SmartMeterOpenCV.h; sourceTree = "<group>"; };
+		5078900B1E1E3183009B4498 /* ImageProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ImageProcessor.cpp; sourceTree = "<group>"; };
+		5078900C1E1E3183009B4498 /* ImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessor.h; sourceTree = "<group>"; };
 		5089F6051E10B05C00016531 /* MeterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterListCell.swift; sourceTree = "<group>"; };
 		5089F6071E10B15500016531 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
 		50CCC2531C1D044400D52115 /* SmartMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +108,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507890071E1E28B4009B4498 /* Foundation.framework in Frameworks */,
+				507890051E1E289F009B4498 /* UIKit.framework in Frameworks */,
+				507890031E1E288E009B4498 /* QuartzCore.framework in Frameworks */,
+				507890011E1E2878009B4498 /* CoreVideo.framework in Frameworks */,
+				50788FFF1E1E286C009B4498 /* CoreMedia.framework in Frameworks */,
+				50788FFD1E1E285E009B4498 /* CoreImage.framework in Frameworks */,
+				50788FFB1E1E284F009B4498 /* CoreGraphics.framework in Frameworks */,
+				50788FF91E1E2841009B4498 /* AVFoundation.framework in Frameworks */,
+				50788FF71E1E2834009B4498 /* AssetsLibrary.framework in Frameworks */,
+				50788FF51E1E2824009B4498 /* Accelerate.framework in Frameworks */,
 				8AD1E5B2C8F5ADAF8468BAD0 /* Pods_SmartMeter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +142,16 @@
 		3DCF07CE1B4D074A13FCE8C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				507890061E1E28B4009B4498 /* Foundation.framework */,
+				507890041E1E289F009B4498 /* UIKit.framework */,
+				507890021E1E288E009B4498 /* QuartzCore.framework */,
+				507890001E1E2878009B4498 /* CoreVideo.framework */,
+				50788FFE1E1E286C009B4498 /* CoreMedia.framework */,
+				50788FFC1E1E285E009B4498 /* CoreImage.framework */,
+				50788FFA1E1E284F009B4498 /* CoreGraphics.framework */,
+				50788FF81E1E2841009B4498 /* AVFoundation.framework */,
+				50788FF61E1E2834009B4498 /* AssetsLibrary.framework */,
+				50788FF41E1E2824009B4498 /* Accelerate.framework */,
 				C2329C24A3D63D77A62BDC6C /* Pods_SmartMeter.framework */,
 				6E0AC7334D16F31502C2E4F6 /* Pods_SmartMeterTests.framework */,
 				640B16667CFD1FED8AE6A909 /* Pods_SmartMeterUITests.framework */,
@@ -142,16 +184,17 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		504635961E1634A000B60F82 /* EmeoCV */ = {
+		504635961E1634A000B60F82 /* SmartMeterCV */ = {
 			isa = PBXGroup;
 			children = (
-				5046359E1E174F1300B60F82 /* EmeoCV.h */,
+				5078900C1E1E3183009B4498 /* ImageProcessor.h */,
+				5078900B1E1E3183009B4498 /* ImageProcessor.cpp */,
 				5046359B1E16374300B60F82 /* UIImage+OpenCV.h */,
 				5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */,
-				504635981E1636F100B60F82 /* UIImage+Rotate.h */,
-				504635991E1636F100B60F82 /* UIImage+Rotate.m */,
+				5078900A1E1E2EE5009B4498 /* SmartMeterOpenCV.h */,
+				507890081E1E2EBA009B4498 /* SmartMeterOpenCV.mm */,
 			);
-			name = EmeoCV;
+			name = SmartMeterCV;
 			sourceTree = "<group>";
 		};
 		50499F2D1E0617A500DE5623 /* Meters */ = {
@@ -186,7 +229,7 @@
 		50CCC2551C1D044400D52115 /* SmartMeter */ = {
 			isa = PBXGroup;
 			children = (
-				504635961E1634A000B60F82 /* EmeoCV */,
+				504635961E1634A000B60F82 /* SmartMeterCV */,
 				500E9FB81E03882700EFFADA /* Services */,
 				500E9FB51E037ED400EFFADA /* Data Model */,
 				50CCC2871C1D075E00D52115 /* View Controller */,
@@ -467,13 +510,14 @@
 				5089F6081E10B15500016531 /* ImageListCell.swift in Sources */,
 				5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */,
 				500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */,
+				507890091E1E2EBA009B4498 /* SmartMeterOpenCV.mm in Sources */,
 				5046359D1E16374300B60F82 /* UIImage+OpenCV.mm in Sources */,
+				5078900D1E1E3183009B4498 /* ImageProcessor.cpp in Sources */,
 				50FEEF9F1E076B6900CC65BD /* ReadingsModel.swift in Sources */,
 				50FE74B01E07655F0020CA65 /* ReadingViewController.swift in Sources */,
 				50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */,
 				500E9FB71E03807700EFFADA /* MeterReadingRealm.swift in Sources */,
 				5022891C1E0BB1740012FBA2 /* AppSplitViewController.swift in Sources */,
-				5046359A1E1636F100B60F82 /* UIImage+Rotate.m in Sources */,
 				50FE74AD1E07652E0020CA65 /* ReadingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

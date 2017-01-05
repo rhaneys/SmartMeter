@@ -14,6 +14,7 @@
 
 #import <UIKit/UIKit.h>
 #import <opencv2/opencv.hpp>
+#import <TesseractOCR/baseapi.h>
 
 @interface UIImage (OpenCV)
 

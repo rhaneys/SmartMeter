@@ -167,14 +167,12 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-//        optional public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject])
-    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
             readingImageView.image = image
         }
         else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            readingImageView.image = image
+            readingImageView.image = SmartMeterOpenCV.init().grayImage(image)
         } else{
             print("Something went wrong")
         }
