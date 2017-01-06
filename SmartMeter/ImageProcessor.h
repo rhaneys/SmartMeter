@@ -16,7 +16,6 @@ class ImageProcessor {
         int contador;
         double media;
     }cuadrante;
-
     
 public:
     /*

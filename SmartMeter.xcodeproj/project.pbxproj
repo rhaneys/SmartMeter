@@ -25,6 +25,7 @@
 		5078900D1E1E3183009B4498 /* ImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5078900B1E1E3183009B4498 /* ImageProcessor.cpp */; };
 		5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6051E10B05C00016531 /* MeterListCell.swift */; };
 		5089F6081E10B15500016531 /* ImageListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5089F6071E10B15500016531 /* ImageListCell.swift */; };
+		50B8794D1E1F0A6C00D65A16 /* UIImageFixedOrientationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B8794C1E1F0A6C00D65A16 /* UIImageFixedOrientationExtension.swift */; };
 		50CCC2571C1D044400D52115 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CCC2561C1D044400D52115 /* AppDelegate.swift */; };
 		50CCC25E1C1D044400D52115 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25C1C1D044400D52115 /* Main.storyboard */; };
 		50CCC2601C1D044400D52115 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CCC25F1C1D044400D52115 /* Assets.xcassets */; };
@@ -80,6 +81,7 @@
 		5078900C1E1E3183009B4498 /* ImageProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageProcessor.h; sourceTree = "<group>"; };
 		5089F6051E10B05C00016531 /* MeterListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeterListCell.swift; sourceTree = "<group>"; };
 		5089F6071E10B15500016531 /* ImageListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListCell.swift; sourceTree = "<group>"; };
+		50B8794C1E1F0A6C00D65A16 /* UIImageFixedOrientationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageFixedOrientationExtension.swift; sourceTree = "<group>"; };
 		50CCC2531C1D044400D52115 /* SmartMeter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartMeter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CCC2561C1D044400D52115 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		50CCC25D1C1D044400D52115 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,10 +189,11 @@
 		504635961E1634A000B60F82 /* SmartMeterCV */ = {
 			isa = PBXGroup;
 			children = (
-				5078900C1E1E3183009B4498 /* ImageProcessor.h */,
-				5078900B1E1E3183009B4498 /* ImageProcessor.cpp */,
+				50B8794C1E1F0A6C00D65A16 /* UIImageFixedOrientationExtension.swift */,
 				5046359B1E16374300B60F82 /* UIImage+OpenCV.h */,
 				5046359C1E16374300B60F82 /* UIImage+OpenCV.mm */,
+				5078900C1E1E3183009B4498 /* ImageProcessor.h */,
+				5078900B1E1E3183009B4498 /* ImageProcessor.cpp */,
 				5078900A1E1E2EE5009B4498 /* SmartMeterOpenCV.h */,
 				507890081E1E2EBA009B4498 /* SmartMeterOpenCV.mm */,
 			);
@@ -507,6 +510,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50CCC2891C1D088900D52115 /* AppTabViewController.swift in Sources */,
+				50B8794D1E1F0A6C00D65A16 /* UIImageFixedOrientationExtension.swift in Sources */,
 				5089F6081E10B15500016531 /* ImageListCell.swift in Sources */,
 				5089F6061E10B05C00016531 /* MeterListCell.swift in Sources */,
 				500E9FBA1E0389F300EFFADA /* RealmSmartMeter.swift in Sources */,

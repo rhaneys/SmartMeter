@@ -38,8 +38,10 @@
 
 - (UIImage*) grayImage:(UIImage*) src {
     
-    cv::Mat source=[src CVGrayscaleMat];
-    UIImage *grayed=[UIImage imageWithCVMat:source];
+    cv::Mat _imgGray;
+    
+    cv::cvtColor([src CVMat], _imgGray, CV_BGR2GRAY);
+    UIImage *grayed=[UIImage imageWithCVMat:_imgGray];
     return grayed;
 }
 
