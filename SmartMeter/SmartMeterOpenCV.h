@@ -13,6 +13,7 @@
 @interface SmartMeterOpenCV : NSObject
 
 - (UIImage*) grayImage:(UIImage*) src;
+
 - (UIImage*) processImage:(UIImage*) src;
 - (NSString*) OCRImage:(UIImage*)src;
 

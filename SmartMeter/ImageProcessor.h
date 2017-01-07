@@ -17,6 +17,9 @@ class ImageProcessor {
         double media;
     }cuadrante;
     
+    cv::Mat _imgGray;
+    std::vector<cv::Mat> _digits;
+    
 public:
     /*
      To test the implementation I perform a canny on a black white image
@@ -58,6 +61,23 @@ public:
      as parameter
      */
     cv::Mat rotateImage(const cv::Mat& source, double angle);
+    
+    
+    cv::Mat cannyEdges();
+    
+    /**
+     * Filter contours by size of bounding rectangle.
+     */
+    void filterContours(std::vector<std::vector<cv::Point> >& contours,
+                                        std::vector<cv::Rect>& boundingBoxes, std::vector<std::vector<cv::Point> >& filteredContours);
+    
+    
+    void findAlignedBoxes(std::vector<cv::Rect>::const_iterator begin,
+                                          std::vector<cv::Rect>::const_iterator end, std::vector<cv::Rect>& result);
+    /**
+     * Find and isolate the digits of the counter,
+     */
+    void findCounterDigits();
 
 };
 

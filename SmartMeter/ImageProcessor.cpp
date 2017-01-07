@@ -6,10 +6,17 @@
 //  Copyright (c) 2012 26775. All rights reserved.
 //
 
-#include <iostream>
 #include "ImageProcessor.h"
 
-
+/**
+ * Functor to help sorting rectangles by their x-position.
+ */
+class sortRectByX {
+public:
+    bool operator()(cv::Rect const & a, cv::Rect const & b) const {
+        return a.x < b.x;
+    }
+};
 
 cv::Mat ImageProcessor::processImage(cv::Mat source, float height){
     
@@ -205,3 +212,97 @@ cv::Mat ImageProcessor::rotateImage(const cv::Mat& source, double angle)
     cv::warpAffine(source, dst, rot_mat, source.size());
     return dst;
 }
+
+cv::Mat ImageProcessor::cannyEdges() {
+    cv::Mat edges;
+    double cannyThreshold1 = 100;
+    double cannyThreshold2 = 200;
+    // detect edges
+    cv::Canny(_imgGray, edges, cannyThreshold1, cannyThreshold2);
+    return edges;
+}
+
+/**
+ * Filter contours by size of bounding rectangle.
+ */
+void ImageProcessor::filterContours(std::vector<std::vector<cv::Point> >& contours,
+                                    std::vector<cv::Rect>& boundingBoxes, std::vector<std::vector<cv::Point> >& filteredContours) {
+    
+    double digitMinHeight = 20;
+    double digitMaxHeight = 90;
+    
+    // filter contours by bounding rect size
+    for (size_t i = 0; i < contours.size(); i++) {
+        cv::Rect bounds = cv::boundingRect(contours[i]);
+        if (bounds.height > digitMinHeight && bounds.height < digitMaxHeight
+            && bounds.width > 5 && bounds.width < bounds.height) {
+            boundingBoxes.push_back(bounds);
+            filteredContours.push_back(contours[i]);
+        }
+    }
+}
+
+/**
+ * Find bounding boxes that are aligned at y position.
+ */
+void ImageProcessor::findAlignedBoxes(std::vector<cv::Rect>::const_iterator begin,
+                                      std::vector<cv::Rect>::const_iterator end, std::vector<cv::Rect>& result) {
+    
+    double digitYAlignment = 10;
+    
+    std::vector<cv::Rect>::const_iterator it = begin;
+    cv::Rect start = *it;
+    ++it;
+    result.push_back(start);
+    
+    for (; it != end; ++it) {
+        if (abs(start.y - it->y) < digitYAlignment && abs(start.height - it->height) < 5) {
+            result.push_back(*it);
+        }
+    }
+}
+
+
+void ImageProcessor::findCounterDigits() {
+    
+    // edge image
+    cv::Mat edges = cannyEdges();
+    
+    cv::Mat img_ret = edges.clone();
+    
+    // find contours in whole image
+    std::vector<std::vector<cv::Point> > contours, filteredContours;
+    std::vector<cv::Rect> boundingBoxes;
+    cv::findContours(edges, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_NONE);
+    
+    // filter contours by bounding rect size
+    filterContours(contours, boundingBoxes, filteredContours);
+    
+    // find bounding boxes that are aligned at y position
+    std::vector<cv::Rect> alignedBoundingBoxes, tmpRes;
+    for (std::vector<cv::Rect>::const_iterator ib = boundingBoxes.begin(); ib != boundingBoxes.end(); ++ib) {
+        tmpRes.clear();
+        findAlignedBoxes(ib, boundingBoxes.end(), tmpRes);
+        if (tmpRes.size() > alignedBoundingBoxes.size()) {
+            alignedBoundingBoxes = tmpRes;
+        }
+    }
+    
+    // sort bounding boxes from left to right
+    std::sort(alignedBoundingBoxes.begin(), alignedBoundingBoxes.end(), sortRectByX());
+    
+    // draw contours
+    cv::Mat cont = cv::Mat::zeros(edges.rows, edges.cols, CV_8UC1);
+    cv::drawContours(cont, filteredContours, -1, cv::Scalar(255));
+    //        cv::imshow("contours", cont);
+    
+    // cut out found rectangles from edged image
+    for (int i = 0; i < alignedBoundingBoxes.size(); ++i) {
+        cv::Rect roi = alignedBoundingBoxes[i];
+        _digits.push_back(img_ret(roi));
+        //        if (_debugDigits) {
+        cv::rectangle(_imgGray, roi, cv::Scalar(0, 255, 0), 2);
+        //        }
+    }
+}
+

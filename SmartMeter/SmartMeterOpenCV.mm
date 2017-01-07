@@ -12,6 +12,9 @@
 
 @implementation SmartMeterOpenCV
 
+    cv::Mat _imgGray;
+    std::vector<cv::Mat> _digits;
+
 - (NSString*) pathToLangugeFIle{
     
     // Set up the tessdata path. This is included in the application bundle
@@ -37,8 +40,6 @@
 }
 
 - (UIImage*) grayImage:(UIImage*) src {
-    
-    cv::Mat _imgGray;
     
     cv::cvtColor([src CVMat], _imgGray, CV_BGR2GRAY);
     UIImage *grayed=[UIImage imageWithCVMat:_imgGray];
