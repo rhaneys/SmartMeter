@@ -39,9 +39,15 @@
     return dataPath;
 }
 
-- (UIImage*) grayImage:(UIImage*) src {
+- (void) grayImage:(UIImage*) src {
     
     cv::cvtColor([src CVMat], _imgGray, CV_BGR2GRAY);
+    UIImage *grayed=[UIImage imageWithCVMat:_imgGray];
+
+}
+
+- (UIImage*) grayImage {
+    
     UIImage *grayed=[UIImage imageWithCVMat:_imgGray];
     return grayed;
 }
@@ -57,6 +63,19 @@
     
     return processed;
         
+}
+
+- (float) detectSkew {
+    
+    ImageProcessor processor;
+    double skew = processor.detectSkew();
+    return skew;
+}
+
+- (void) rotate:(float) rotationDegrees {
+    ImageProcessor processor;
+    processor.rotate(rotationDegrees);
+    
 }
 
 - (NSString*) OCRImage:(UIImage*)src{

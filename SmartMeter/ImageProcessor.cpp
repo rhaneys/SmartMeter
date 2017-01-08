@@ -204,6 +204,81 @@ int ImageProcessor::correctRotation(cv::Mat &image, cv::Mat &output, float heigh
 	return 0;
 }
 
+/**
+ * Draw lines into image.
+ * For debugging purposes.
+ */
+void ImageProcessor::drawLines(std::vector<cv::Vec2f>& lines) {
+    // draw lines
+    for (size_t i = 0; i < lines.size(); i++) {
+        float rho = lines[i][0];
+        float theta = lines[i][1];
+        double a = cos(theta), b = sin(theta);
+        double x0 = a * rho, y0 = b * rho;
+        cv::Point pt1(cvRound(x0 + 1000 * (-b)), cvRound(y0 + 1000 * (a)));
+        cv::Point pt2(cvRound(x0 - 1000 * (-b)), cvRound(y0 - 1000 * (a)));
+        cv::line(_imgGray, pt1, pt2, cv::Scalar(255, 0, 0), 1);
+    }
+}
+
+/**
+ * Draw lines into image.
+ * For debugging purposes.
+ */
+void ImageProcessor::drawLines(std::vector<cv::Vec4i>& lines, int xoff, int yoff) {
+    for (size_t i = 0; i < lines.size(); i++) {
+        cv::line(_imgGray, cv::Point(lines[i][0] + xoff, lines[i][1] + yoff),
+                 cv::Point(lines[i][2] + xoff, lines[i][3] + yoff), cv::Scalar(255, 0, 0), 1);
+    }
+}
+
+/**
+ * Detect the skew of the image by finding almost (+- 30 deg) horizontal lines.
+ */
+float ImageProcessor::detectSkew() {
+    
+    cv::Mat edges = cannyEdges();
+    
+    // find lines
+    std::vector<cv::Vec2f> lines;
+    cv::HoughLines(edges, lines, 1, CV_PI / 180.f, 140);
+    
+    // filter lines by theta and compute average
+    std::vector<cv::Vec2f> filteredLines;
+    float theta_min = 60.f * CV_PI / 180.f;
+    float theta_max = 120.f * CV_PI / 180.0f;
+    float theta_avr = 0.f;
+    float theta_deg = 0.f;
+    for (size_t i = 0; i < lines.size(); i++) {
+        float theta = lines[i][1];
+        if (theta >= theta_min && theta <= theta_max) {
+            filteredLines.push_back(lines[i]);
+            theta_avr += theta;
+        }
+    }
+    if (filteredLines.size() > 0) {
+        theta_avr /= filteredLines.size();
+        theta_deg = (theta_avr / CV_PI * 180.f) - 90;
+    }
+    
+    drawLines(filteredLines);
+
+    return theta_deg;
+}
+
+/**
+ * Rotate image.
+ */
+void ImageProcessor::rotate(float rotationDegrees) {
+    cv::Mat M = cv::getRotationMatrix2D(cv::Point(_imgGray.cols / 2, _imgGray.rows / 2), rotationDegrees, 1);
+    cv::Mat img_rotated;
+//    void warpAffine(InputArray src, OutputArray dst, InputArray M, Size dsize, int flags=INTER_LINEAR, int borderMode=BORDER_CONSTANT, const Scalar& borderValue=Scalar())
+    
+    cv::warpAffine(_imgGray, img_rotated, M, _imgGray.size());
+    _imgGray = img_rotated;
+}
+
+
 cv::Mat ImageProcessor::rotateImage(const cv::Mat& source, double angle)
 {
     cv::Point2f src_center(source.cols/2.0F, source.rows/2.0F);

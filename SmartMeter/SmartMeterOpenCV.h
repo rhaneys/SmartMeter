@@ -12,7 +12,11 @@
 
 @interface SmartMeterOpenCV : NSObject
 
-- (UIImage*) grayImage:(UIImage*) src;
+- (void) grayImage:(UIImage*) src;
+- (UIImage*) grayImage;
+- (float) detectSkew;
+- (void) rotate:(float) rotationDegrees;
+
 
 - (UIImage*) processImage:(UIImage*) src;
 - (NSString*) OCRImage:(UIImage*)src;

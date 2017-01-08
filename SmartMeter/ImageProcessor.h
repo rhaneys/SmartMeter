@@ -62,6 +62,27 @@ public:
      */
     cv::Mat rotateImage(const cv::Mat& source, double angle);
     
+    /**
+     * Draw lines into image.
+     * For debugging purposes.
+     */
+    void drawLines(std::vector<cv::Vec2f>& lines);
+    
+    /**
+     * Draw lines into image.
+     * For debugging purposes.
+     */
+    void drawLines(std::vector<cv::Vec4i>& lines, int xoff, int yoff);
+    
+    /**
+     * Detect the skew of the image by finding almost (+- 30 deg) horizontal lines.
+     */
+    float detectSkew();
+    
+    /**
+     * Rotate image.
+     */
+    void rotate(float rotationDegrees);
     
     cv::Mat cannyEdges();
     

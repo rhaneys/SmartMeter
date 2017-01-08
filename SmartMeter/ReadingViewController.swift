@@ -173,9 +173,12 @@ class ReadingViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
         else if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             let orientedImage = image.fixedOrientation()
+            let openCV = SmartMeterOpenCV.init()
             
-            
-            readingImageView.image = SmartMeterOpenCV.init().grayImage(orientedImage)
+            openCV.grayImage(orientedImage)
+            let skew = openCV.detectSkew()
+            openCV.rotate(skew)
+            readingImageView.image = openCV.grayImage()
         } else{
             print("Something went wrong")
         }
