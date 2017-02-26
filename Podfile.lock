@@ -1,5 +1,25 @@
 PODS:
   - Alamofire (3.5.1)
+  - FirebaseAnalytics (3.6.0):
+    - FirebaseCore (~> 3.4)
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseCore (3.4.6):
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (1.0.8)
+  - Google (3.0.3):
+    - Google/Core (= 3.0.3)
+  - Google/Core (3.0.3):
+    - FirebaseAnalytics (~> 3.2)
+  - GoogleInterchangeUtilities (1.2.2):
+    - GoogleSymbolUtilities (~> 1.1)
+  - GoogleSymbolUtilities (1.1.2)
+  - GoogleToolboxForMac/Defines (2.1.0)
+  - GoogleToolboxForMac/NSData+zlib (2.1.0):
+    - GoogleToolboxForMac/Defines (= 2.1.0)
   - OpenCV (3.1.0.1)
   - ReactiveCocoa (4.2.2):
     - Result (~> 2.0)
@@ -15,6 +35,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 3.4)
+  - Google
   - OpenCV
   - ReactiveCocoa (~> 4.2.2)
   - Realm (~> 2.0.2)
@@ -25,6 +46,13 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  FirebaseAnalytics: 9c67af0ebeb8d2146c9b4ea2616439affa947b58
+  FirebaseCore: 03da1cb32615569bbc2830a22f9ad753d9a02ef5
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
+  Google: 813c467362eabc11385f5a5cc9ad0cb651a58f4e
+  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
+  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
+  GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   OpenCV: 41c4250e2b06a394d6fbb634b5fa622cdd846018
   ReactiveCocoa: 72263e7ac0770c274617ccd345e01049d0ca38ae
   Realm: 9da97f48365f8b99dd95c28d45ad8222d62e1775
@@ -34,6 +62,6 @@ SPEC CHECKSUMS:
   TesseractOCRiOS: 90638afbe43d082433f2e76b384c7901d23956df
   XCGLogger: e111a313f609432394c3ae378d99511634fd2e3c
 
-PODFILE CHECKSUM: b7ff3a850d945d66a4abc5336c0086560ed41ab5
+PODFILE CHECKSUM: 91cedb13edd935aa1d657083fd055142ac58866d
 
 COCOAPODS: 1.1.1

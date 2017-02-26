@@ -12,6 +12,7 @@ pod 'RealmSwift', '~> 2.0.2'
 pod 'XCGLogger', '~> 3.1.1'
 pod 'OpenCV'
 pod 'TesseractOCRiOS'
+pod 'Google'
 
 end
 

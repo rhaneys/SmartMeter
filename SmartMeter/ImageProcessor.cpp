@@ -272,10 +272,32 @@ float ImageProcessor::detectSkew() {
 void ImageProcessor::rotate(float rotationDegrees) {
     cv::Mat M = cv::getRotationMatrix2D(cv::Point(_imgGray.cols / 2, _imgGray.rows / 2), rotationDegrees, 1);
     cv::Mat img_rotated;
+    _imgGray = M;
+    
+//    http://www.programering.com/a/MTN0UTNwATk.html
 //    void warpAffine(InputArray src, OutputArray dst, InputArray M, Size dsize, int flags=INTER_LINEAR, int borderMode=BORDER_CONSTANT, const Scalar& borderValue=Scalar())
     
-    cv::warpAffine(_imgGray, img_rotated, M, _imgGray.size());
-    _imgGray = img_rotated;
+//    Point2f srcTriangle[3];
+//    Point2f dstTriangle[3];
+//    
+//    Mat rotMat(2, 3, CV_32FC1);
+//    Mat warpMat(2, 3, CV_32FC1);
+//    
+//    Mat srcImage, dstImage_wrap, dstImage_wrap_rotate;
+    
+//    cv::Mat dst;
+//    cv::Point2f pt(_imgGray.cols/2., _imgGray.rows/2.);
+//    cv::Mat r = getRotationMatrix2D(pt, rotationDegrees, 1.0);
+//    cv::warpAffine(_imgGray, dst, r, cv::Size(_imgGray.cols, _imgGray.rows));
+//    return dst;
+//    
+//    
+//    
+//    
+//    
+//    
+//    cv::warpAffine(_imgGray, img_rotated, M, _imgGray.size());
+//    _imgGray = img_rotated;
 }
 
 
